@@ -33,4 +33,7 @@ public class TripManager {
         return userController.getUser(email);
     }
 
+    public boolean checkLogin(String email, String password){
+        return userController.checkLogin(email,password);
+    }
 }

@@ -3,10 +3,11 @@ package be.kdg.trips;
 import be.kdg.trips.facade.TripManager;
 import be.kdg.trips.model.user.exception.UserException;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Subversion id
@@ -45,4 +46,15 @@ public class TestUser {
         tripManager.getUser("keke.kokelenberg");
     }
 
+    @Test
+    public void succesfulLogin() throws UserException {
+        tripManager.registerUser("gijs.muys", "password");
+        assertTrue(tripManager.checkLogin("gijs.muys", "password"));
+    }
+
+    @Test
+    public void failLogin() throws UserException {
+        tripManager.registerUser("gijs.muys", "password");
+        assertFalse(tripManager.checkLogin("gijs.muys", "gijs"));
+    }
 }

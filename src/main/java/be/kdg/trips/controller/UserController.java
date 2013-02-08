@@ -38,4 +38,15 @@ public class UserController {
             throw new UserException("User doesn't exist");
         }
     }
+
+    public boolean checkLogin(String email, String password){
+        User user = userDao.getUser(email);
+        boolean success=false;
+        if(!user.isNull()){
+           if(user.getPassword().equals(password)){
+               success=true;
+           }
+        }
+        return success;
+    }
 }
