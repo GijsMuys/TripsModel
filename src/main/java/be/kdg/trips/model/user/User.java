@@ -3,6 +3,8 @@ package be.kdg.trips.model.user;
 import be.kdg.trips.model.Nullable;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 /**
  * Subversion id
  * Project Application Development
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Component;
  * 2012-2013
  */
 @Component
-public class User implements Nullable {
+public class User implements Nullable, Serializable {
     private String email;
     private String password;
 

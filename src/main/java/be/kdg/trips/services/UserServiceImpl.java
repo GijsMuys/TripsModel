@@ -12,11 +12,10 @@ import org.springframework.stereotype.Service;
  * Karel de Grote-Hogeschool
  * 2012-2013
  */
-@Service
-public class UserServerImpl implements UserService {
+public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
-    public UserServerImpl() {
+    public UserServiceImpl() {
         this.userDao = new UserDaoImpl();
     }
 

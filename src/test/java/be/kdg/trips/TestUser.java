@@ -1,7 +1,7 @@
 package be.kdg.trips;
 
 import be.kdg.trips.model.user.exception.UserException;
-import be.kdg.trips.services.UserServerImpl;
+import be.kdg.trips.services.UserServiceImpl;
 import be.kdg.trips.services.UserService;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class TestUser {
 
     @Before
     public  void createTripManager(){
-        userService = new UserServerImpl();
+        userService = new UserServiceImpl();
     }
 
     @Test
