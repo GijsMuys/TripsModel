@@ -31,30 +31,30 @@ public class TestUser {
 
     @Test(expected = UserException.class)
     public void registerExistingUser() throws UserException {
-        tripManager.registerUser("gijs.muys", "password");
-        tripManager.registerUser("gijs.muys", "password");
+        tripManager.registerUser("keke", "password");
+        tripManager.registerUser("keke", "password");
     }
 
    @Test
     public void getExistingUser() throws UserException {
-        tripManager.registerUser("gijs.muys", "password");
-        assertNotNull(tripManager.getUser("gijs.muys"));
+       tripManager.registerUser("robin", "password");
+        assertNotNull(tripManager.getUser("robin"));
     }
 
     @Test(expected = UserException.class)
     public void getUnexistingUser() throws UserException {
-        tripManager.getUser("keke.kokelenberg");
+        tripManager.getUser("mathias");
     }
 
     @Test
     public void succesfulLogin() throws UserException {
-        tripManager.registerUser("gijs.muys", "password");
-        assertTrue(tripManager.checkLogin("gijs.muys", "password"));
+        tripManager.registerUser("joris", "password");
+        assertTrue(tripManager.checkLogin("joris", "password"));
     }
 
     @Test
     public void failLogin() throws UserException {
-        tripManager.registerUser("gijs.muys", "password");
-        assertFalse(tripManager.checkLogin("gijs.muys", "gijs"));
+        tripManager.registerUser("joel", "password");
+        assertFalse(tripManager.checkLogin("joel", "joel"));
     }
 }
