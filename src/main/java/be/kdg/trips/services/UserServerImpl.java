@@ -4,6 +4,7 @@ import be.kdg.trips.model.user.User;
 import be.kdg.trips.model.user.exception.UserException;
 import be.kdg.trips.persistence.dao.impl.UserDaoImpl;
 import be.kdg.trips.persistence.dao.interfaces.UserDao;
+import org.springframework.stereotype.Service;
 
 /**
  * Subversion id
@@ -11,7 +12,7 @@ import be.kdg.trips.persistence.dao.interfaces.UserDao;
  * Karel de Grote-Hogeschool
  * 2012-2013
  */
-
+@Service
 public class UserServerImpl implements UserService {
     private UserDao userDao;
 

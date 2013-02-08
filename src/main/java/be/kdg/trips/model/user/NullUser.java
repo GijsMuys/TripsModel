@@ -1,6 +1,7 @@
 package be.kdg.trips.model.user;
 
 import be.kdg.trips.model.Nullable;
+import org.springframework.stereotype.Component;
 
 /**
  * Subversion id
@@ -8,6 +9,7 @@ import be.kdg.trips.model.Nullable;
  * Karel de Grote-Hogeschool
  * 2012-2013
  */
+@Component
 public final class NullUser extends User implements Nullable {
     private static NullUser theNullUser = new NullUser();
 
