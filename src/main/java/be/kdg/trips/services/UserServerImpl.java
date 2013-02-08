@@ -1,4 +1,4 @@
-package be.kdg.trips.controller;
+package be.kdg.trips.services;
 
 import be.kdg.trips.model.user.User;
 import be.kdg.trips.model.user.exception.UserException;
@@ -11,10 +11,11 @@ import be.kdg.trips.persistence.dao.interfaces.UserDao;
  * Karel de Grote-Hogeschool
  * 2012-2013
  */
-public class UserController {
+
+public class UserServerImpl implements UserService {
     private UserDao userDao;
 
-    public UserController() {
+    public UserServerImpl() {
         this.userDao = new UserDaoImpl();
     }
 
