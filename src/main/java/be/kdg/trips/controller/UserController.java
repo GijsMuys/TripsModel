@@ -19,7 +19,8 @@ public class UserController {
     }
 
     public void addUser(String email, String password) throws UserException {
-        if(getUser(email).isNull())
+        User user = userDao.getUser(email);
+        if(user.isNull())
         {
             userDao.addUser(new User(email, password));
         }
@@ -29,7 +30,12 @@ public class UserController {
         }
     }
 
-    public User getUser(String email){
-        return userDao.getUser(email);
+    public User getUser(String email) throws UserException {
+        User user = userDao.getUser(email);
+        if(!user.isNull()){
+            return user;
+        }else{
+            throw new UserException("User doesn't exist");
+        }
     }
 }

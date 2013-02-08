@@ -28,6 +28,8 @@ public class UserDaoImpl implements UserDao {
             if(user.equals(null)){
                 user = NullUser.getInstance();
             }
+
+
         }catch(Exception ex){
             user = NullUser.getInstance();
         }

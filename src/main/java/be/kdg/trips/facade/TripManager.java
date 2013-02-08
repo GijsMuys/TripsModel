@@ -29,7 +29,7 @@ public class TripManager {
         userController.addUser(email,password);
     }
 
-    public User getUser(String email){
+    public User getUser(String email) throws UserException {
         return userController.getUser(email);
     }
 
